@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import "./Expenses.css";
 import { useState } from "react";
+import ExpenseChart from "../ExpenseChart/ExpenseChart";
 const Expenses = ({ expenses }) => {
   const [filteredYear, setFilteredYear] = useState("2025");
 
@@ -19,6 +20,7 @@ const Expenses = ({ expenses }) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      <ExpenseChart expenses={filteredExpenses} />
       {filteredExpenses.length === 0 ? (
         <p className="not-found">No expenses found.</p>
       ) : (
